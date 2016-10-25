@@ -1,0 +1,28 @@
+# clone this
+git clone https://github.com/scotch-io/scotch-box
+
+# start the Vagrant machine
+cd scotch-box
+vagrant up
+
+# enter the vm
+vagrant ssh
+
+### Execute these commands in the VM ###
+
+# update Composer
+sudo /usr/local/bin/composer self-update
+
+# install Lumen
+composer global require "laravel/lumen-installer"
+
+# clear out old Apache site and create the new Lumen one
+rm -rf /var/www/public
+cd /var/www
+lumen new public
+
+# Now you must create an index.php file in
+# /var/www/public and include the index.php
+# file at /var/www/public/public/index.php
+# That should be it!
+
