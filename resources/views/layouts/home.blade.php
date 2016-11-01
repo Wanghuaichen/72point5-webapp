@@ -3,7 +3,7 @@
 </head>
 
 <body>
-<h1>Heya</h1>
+<h1>Heya {{ $name }}</h1>
 </body>
 
 </html>

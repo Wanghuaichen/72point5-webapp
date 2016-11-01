@@ -23,7 +23,8 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-// $app->withFacades();
+// allow for DB quickness
+$app->withFacades();
 
 // $app->withEloquent();
 
