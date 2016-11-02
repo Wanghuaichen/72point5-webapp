@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 class MainController extends Controller
 {
-    public function getAll() 
+    public function getAllSamples() 
     {
-        $cow = app('db')->select("SELECT * FROM testcow");
-        return $cow;
+        $samples = app('db')->select("SELECT * FROM sample");
+		return view('layouts/home', compact('samples'));
     }
 }
