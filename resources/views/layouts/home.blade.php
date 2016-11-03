@@ -37,15 +37,15 @@
 		</thead>
 	@foreach ($samples as $sample)
 		<tr>
-			<td>{{ json_encode($sample->id) }}</td>
-			<td>{{ json_encode($sample->body_temp) }}</td>
-			<td>{{ json_encode($sample->ext_temp) }}</td>
-			<td>{{ json_encode($sample->x) }}</td>
-			<td>{{ json_encode($sample->y) }}</td>
-			<td>{{ json_encode($sample->z) }}</td>
-			<td>{{ json_encode($sample->respire) }}</td>
-			<td>{{ json_encode($sample->cow_id) }}</td>
-			<td>{{ date("Y-m-d H:i:s", json_encode($sample->timestamp)) }}</td>
+			<td>{{ $sample->id }}</td>
+			<td>{{ $sample->body_temp }}</td>
+			<td>{{ $sample->ext_temp }}</td>
+			<td>{{ $sample->x }}</td>
+			<td>{{ $sample->y }}</td>
+			<td>{{ $sample->z }}</td>
+			<td>{{ $sample->respire }}</td>
+			<td>{{ $sample->cow_id }}</td>
+			<td>{{ date("Y-m-d H:i:s", $sample->timestamp) }}</td>
 		</tr>
 	@endforeach
 	</table>
