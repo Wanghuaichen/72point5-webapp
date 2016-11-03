@@ -10,11 +10,11 @@ app.config(function($interpolateProvider) {
 	$interpolateProvider.endSymbol('%>');
 })
 
-app.controller("MainController", ['$scope', '$http',
-	function($scope, $http) {
-		$scope.title = "Cow Samples";
-		$scope.samples = [];
+app.controller("MainController", ['$scope', '$http', function($scope, $http) {
+	$scope.title = "Cow Samples";
+	$scope.samples = [];
 
+	$scope.getAllSamples = function getAllSamples() {
 		$http({
 			method: 'GET',
 			url: '/all',
@@ -26,5 +26,11 @@ app.controller("MainController", ['$scope', '$http',
 				console.log("Error getting samples");
 			}
 		);
-	}
-]);
+	};
+
+	// get all samples and set loop on database
+	$scope.getAllSamples();
+	window.setInterval(function() {
+		$scope.getAllSamples();
+	}, 5000);
+}]);
