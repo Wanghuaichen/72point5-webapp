@@ -44,7 +44,7 @@
 			<td><% sample.z %></td>
 			<td><% sample.respire %></td>
 			<td><% sample.cow_id %></td>
-			<td><% sample.timestamp | date:"MM/dd/yyyy @ h:mma" %></td>
+			<td><% sample.timestamp * 1000 | date:'medium' %></td>
 		</tr>
 	</table>
 </body>
