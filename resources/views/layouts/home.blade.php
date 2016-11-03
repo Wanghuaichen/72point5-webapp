@@ -1,6 +1,10 @@
-<html>
+<html ng-app="app">
 <head>
 	<title>72 Point 5</title>
+
+	{{-- js --}}
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="js/app.js"></script>
 </head>
 
 <style>
@@ -15,7 +19,8 @@
 	}
 </style>
 
-<body>
+<body ng-controller="MainController">
+<h1 ng-model="title"><% title %></h1>
 	<table>
 		<thead>
 			<tr>
