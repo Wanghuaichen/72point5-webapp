@@ -18,9 +18,14 @@ try {
 | application as an "IoC" container and router for this framework.
 |
 */
+if ($_ENV['APP_ENV'] == "local") {
+	$realpath = __DIR__.'/../';
+} else {
+	$realpath = __DIR__.'/../public/';
+}
 
 $app = new Laravel\Lumen\Application(
-    realpath(__DIR__.'/../')
+	realpath($realpath)
 );
 
 // allow for DB quickness
