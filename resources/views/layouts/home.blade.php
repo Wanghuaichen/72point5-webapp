@@ -27,6 +27,7 @@
 				<th>Z</th>
 				<th>Respiration Rate</th>
 				<th>Cow ID</th>
+				<th>Timestamp</th>
 			</tr>
 		</thead>
 	@foreach ($samples as $sample)
@@ -39,6 +40,7 @@
 			<td>{{ json_encode($sample->z) }}</td>
 			<td>{{ json_encode($sample->respire) }}</td>
 			<td>{{ json_encode($sample->cow_id) }}</td>
+			<td>{{ date("Y-m-d H:i:s", json_encode($sample->timestamp)) }}</td>
 		</tr>
 	@endforeach
 	</table>
