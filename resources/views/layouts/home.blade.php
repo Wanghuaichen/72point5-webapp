@@ -1,4 +1,4 @@
-<html ng-app="app" ng-controller="MainController">
+<html>
 <head>
 	<title>72 Point 5</title>
 
@@ -28,7 +28,7 @@
 	}
 </style>
 
-<body>
+<body ng-app="app" ng-controller="MainController">
 <h1 ng-model="title"><% title %></h1>
 	<table>
 		<thead>
