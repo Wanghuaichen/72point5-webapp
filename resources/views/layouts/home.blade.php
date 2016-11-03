@@ -5,15 +5,6 @@
 	{{-- js --}}
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script src="js/app.js"></script>
-	<script>
-		if ("{{ env('APP_ENV') }}" == 'prod') {
-			var head = document.getElementsByTagName('head')[0];
-			var script = document.createElement('script');
-			script.type = 'text/javascript';
-			script.src = 'public/js/app.js';
-			head.appendChild(script)
-		}
-	</script>
 </head>
 
 <style>
