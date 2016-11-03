@@ -6,5 +6,7 @@
 |---------------------
 */
 
-$app->get('/', 'MainController@getAllSamples');
+$app->get('/', 'MainController@viewHome');
+
+$app->get('/all', 'MainController@getAllSamples');
 

@@ -35,19 +35,17 @@
 				<th>Timestamp</th>
 			</tr>
 		</thead>
-	@foreach ($samples as $sample)
-		<tr>
-			<td>{{ $sample->id }}</td>
-			<td>{{ $sample->body_temp }}</td>
-			<td>{{ $sample->ext_temp }}</td>
-			<td>{{ $sample->x }}</td>
-			<td>{{ $sample->y }}</td>
-			<td>{{ $sample->z }}</td>
-			<td>{{ $sample->respire }}</td>
-			<td>{{ $sample->cow_id }}</td>
-			<td>{{ date("Y-m-d H:i:s", $sample->timestamp) }}</td>
+		<tr ng-repeat="sample in samples">
+			<td><% sample.id %></td>
+			<td><% sample.body_temp %></td>
+			<td><% sample.ext_temp %></td>
+			<td><% sample.x %></td>
+			<td><% sample.y %></td>
+			<td><% sample.z %></td>
+			<td><% sample.respire %></td>
+			<td><% sample.cow_id %></td>
+			<td><% sample.timestamp | date:"MM/dd/yyyy @ h:mma" %></td>
 		</tr>
-	@endforeach
 	</table>
 </body>
 

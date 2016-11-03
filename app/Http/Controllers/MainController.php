@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 class MainController extends Controller
 {
+	public function viewHome()
+	{
+		return view('layouts/home');
+	}
+
     public function getAllSamples() 
     {
-        $samples = app('db')->select("SELECT * FROM sample");
-		return view('layouts/home', compact('samples'));
+        return app('db')->select("SELECT * FROM sample");
     }
 }
