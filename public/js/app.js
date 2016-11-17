@@ -11,14 +11,11 @@ app.config(function($interpolateProvider) {
 })
 
 app.controller("MainController", ['$scope', '$http', function($scope, $http) {
-	$scope.title = "Cow Samples";
+	$scope.title = "Cow Samples (RAW)";
 	$scope.samples = [];
 
 	$scope.getAllSamples = function getAllSamples() {
-		$http({
-			method: 'GET',
-			url: '/all',
-		}).then(
+		$http.post('/all').then(
 			function success(response) {
 				$scope.samples = response.data;
 			}, 
@@ -32,5 +29,5 @@ app.controller("MainController", ['$scope', '$http', function($scope, $http) {
 	$scope.getAllSamples();
 	window.setInterval(function() {
 		$scope.getAllSamples();
-	}, 5000);
+	}, 3000);
 }]);

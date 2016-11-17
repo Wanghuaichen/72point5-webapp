@@ -33,6 +33,7 @@
 				<th>Respiration Rate</th>
 				<th>Cow ID</th>
 				<th>Timestamp</th>
+				<th>Error Code</th>
 			</tr>
 		</thead>
 		<tr ng-repeat="sample in samples">
@@ -45,6 +46,7 @@
 			<td><% sample.respire %></td>
 			<td><% sample.cow_id %></td>
 			<td><% sample.timestamp * 1000 | date:'medium' %></td>
+			<td><% sample.error %></td>
 		</tr>
 	</table>
 </body>
