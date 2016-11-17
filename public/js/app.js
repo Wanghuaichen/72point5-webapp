@@ -14,7 +14,7 @@ app.controller("MainController", ['$scope', '$http', function($scope, $http) {
 	$scope.title = "Cow Samples (RAW)";
 	$scope.samples = [];
 
-	$scope.getAllSamples = function getAllSamples() {
+	$scope.getAllRawSamples = function getAllSamples() {
 		$http.post('/all').then(
 			function success(response) {
 				$scope.samples = response.data;

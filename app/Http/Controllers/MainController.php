@@ -9,7 +9,7 @@ class MainController extends Controller
 		return view('layouts/home');
 	}
 
-    public function getAllSamples() 
+    public function getAllRawSamples() 
     {
         return app('db')->select("SELECT * FROM sample");
     }

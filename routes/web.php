@@ -8,5 +8,5 @@
 
 $app->get('/', 'MainController@viewHome');
 
-$app->post('/all', 'MainController@getAllSamples');
+$app->post('/all', 'MainController@getAllRawSamples');
 
