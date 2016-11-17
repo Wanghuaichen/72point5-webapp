@@ -21,10 +21,6 @@ class MainController extends Controller
 		$data = $request->input();
 		foreach ($data as $key => $value) {
 			/*** IN HERE WE CAN DO VALIDATION OF INPUTS ***/
-			if (empty($value)) {
-				echo "Failure!";
-				break;
-			}
 		}
 
 		app('db')->table('sample')->insert([
