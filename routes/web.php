@@ -6,7 +6,11 @@
 |---------------------
 */
 
+/* views */
 $app->get('/', 'MainController@viewHome');
 
-$app->post('/all', 'MainController@getAllRawSamples');
+/* api */
+$app->post('/getAllRaw', 'MainController@getAllRawSamples');
+$app->post('/newRaw', 'MainController@newRawSample');
+
 
