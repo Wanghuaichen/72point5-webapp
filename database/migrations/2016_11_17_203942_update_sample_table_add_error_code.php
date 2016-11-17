@@ -4,31 +4,30 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterSampleAddTime extends Migration
+class UpdateSampleTableAddErrorCode extends Migration
 {
     /**
-     * Run the migrations.
-	 *
-	 * Add the timestamp field to the cow samples
+     * Add the error code column to the Sample table
      *
      * @return void
      */
     public function up()
     {
 		Schema::table('sample', function (Blueprint $table) {
-			$table->integer('timestamp')->unsigned();
+			$table->char('error', 1);
 		});
     }
 
     /**
-     * Reverse the migrations.
+	 * Reverse the addition of the error code column from
+	 * the Sample table 
      *
      * @return void
      */
     public function down()
     {
 		Schema::table('sample', function (Blueprint $table) {
-			$table->drop('timestamp');
+			$table->drop('error');
 		});
     }
 }
