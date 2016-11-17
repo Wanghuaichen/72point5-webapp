@@ -25,7 +25,6 @@ class MainController extends Controller
 
 		app('db')->table('sample')->insert([
 			[
-				'id'		=> $data['id'],
 				'body_temp' => $data['body_temp'],
 				'ext_temp'  => $data['ext_temp'],
 				'x'			=> $data['x'],
