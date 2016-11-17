@@ -32,6 +32,7 @@ class MainController extends Controller
 				'z'			=> $data['z'],
 				'respire'	=> $data['respire'],
 				'cow_id'	=> $data['cow_id'],
+				'timestamp' => $data['timestamp'],
 				'error'		=> $data['error']
 			]	
 		]);
