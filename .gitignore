@@ -5,3 +5,4 @@ Homestead.yaml
 .env
 .tags
 tags
+/node_modules

@@ -1,0 +1,26 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "casperjs test tests/js/*.js --url=http://192.168.33.10/",
+	"testprod": "casperjs test tests/js/*.js --url=http://74.208.156.48/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/addisonbgross/72point5-webapp.git"
+  },
+  "author": "72point5",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/addisonbgross/72point5-webapp/issues"
+  },
+  "homepage": "https://github.com/addisonbgross/72point5-webapp#readme",
+  "dependencies": {
+    "casperjs": "^1.1.3"
+  }
+}
