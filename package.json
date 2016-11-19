@@ -7,8 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "casperjs test tests/js/*.js --url=http://192.168.33.10/",
-	"testprod": "casperjs test tests/js/*.js --url=http://74.208.156.48/"
+    "test": "TEST_URL=http://192.168.33.10/ casperjs test tests/js/*.js",
+	"testprod": "TEST_URL=http://74.208.156.48/ casperjs test tests/js/*.js"
   },
   "repository": {
     "type": "git",
