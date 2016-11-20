@@ -25,7 +25,7 @@ app.controller("MainController", ['$scope', '$http', function($scope, $http) {
 			}
 		);
 	};
-$scope.getAllRawSamples()
+
 	// get all samples and set loop on database
 	$scope.getAllRawSamples();
 	window.setInterval(function() {
