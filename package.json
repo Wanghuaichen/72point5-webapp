@@ -7,10 +7,10 @@
     "test": "tests"
   },
   "scripts": {
-	"test": "TEST_URL=http://192.168.33.10/ casperjs test tests/js/*.js && phpunit",
+    "test": "TEST_URL=http://192.168.33.10/ casperjs test tests/js/*.js && phpunit",
     "testdev": "TEST_URL=http://192.168.33.10/ casperjs test tests/js/*.js",
-	"testprod": "TEST_URL=http://74.208.156.48/ casperjs test tests/js/*.js",
-	"testback": "phpunit"
+    "testprod": "TEST_URL=http://74.208.156.48/ casperjs test tests/js/*.js",
+    "testback": "phpunit"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/addisonbgross/72point5-webapp#readme",
   "dependencies": {
-    "casperjs": "^1.1.3"
+    "casperjs": "^1.1.3",
+    "phantomjs": "^2.1.7"
   }
 }
