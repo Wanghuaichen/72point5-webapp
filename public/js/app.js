@@ -19,7 +19,7 @@ app.controller("MainController", ['$scope', '$http', function($scope, $http) {
 		$http.post('/getAllRaw').then(
 			function success(response) {
 				$scope.samples = response.data;
-			}, 
+			},
 			function error(response) {
 				console.log("Error getting samples");
 			}
