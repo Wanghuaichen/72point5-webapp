@@ -30,7 +30,7 @@
 				<th>X</th>
 				<th>Y</th>
 				<th>Z</th>
-				<th>Respiration Rate</th>
+				<th>Heart Rate</th>
 				<th>Cow ID</th>
 				<th>Timestamp</th>
 				<th>Error Code</th>
