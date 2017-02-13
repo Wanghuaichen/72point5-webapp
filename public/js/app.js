@@ -11,7 +11,7 @@ app.config(function($interpolateProvider) {
 })
 
 app.controller("MainController", ['$scope', '$http', function($scope, $http) {
-	$scope.title = "Cow Samples (RAW)";
+	$scope.title = "All Cows";
 	$scope.samples = [];
 
 	// retrieve all unrefined, raw samples from db

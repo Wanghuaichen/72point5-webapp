@@ -34,7 +34,7 @@ class MainController extends Controller
 				'respire'	=> $data['respire'],
 				'cow_id'	=> $data['cow_id'],
 				'timestamp' => $data['timestamp'],
-				'error'		=> empty($data['error']) ? 0 : $data['error']
+				'error'		=> $data['error']
 			]	
 		]);
 	}
