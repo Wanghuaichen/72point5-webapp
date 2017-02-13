@@ -1,5 +1,13 @@
-@import 'table.scss';
+@import 'constants.scss';
+@import 'mixins.scss';
+@import 'nav.scss';
+@import 'data.scss';
 
 body {
-	background-color: #EEE;
+	margin: 0;
+	background-color: $background-color;
+}
+
+.main-container {
+
 }

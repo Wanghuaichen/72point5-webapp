@@ -32,3 +32,17 @@ app.controller("MainController", ['$scope', '$http', function($scope, $http) {
 		$scope.getAllRawSamples();
 	}, 3000);
 }]);
+
+app.controller("NavController", ['$scope', function($scope) {
+
+	$scope.navTo = function(location) {
+		var buttons = document.getElementsByClassName('action-button');
+		[].forEach.call(buttons, function(button) {
+			if (location == button.innerText) {
+				button.classList.add("active");	
+			} else {
+				button.classList.remove("active");
+			}
+		});
+	}
+}]);

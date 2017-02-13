@@ -1,0 +1,40 @@
+.sidebar {
+	height: 100%;
+	width: 90px;
+	background-color: $primary-light-color;
+	-webkit-box-shadow: 3px 0px 3px 0px rgba(176,176,176,1);
+	-moz-box-shadow: 3px 0px 3px 0px rgba(176,176,176,1);
+	box-shadow: 3px 0px 3px 0px rgba(176,176,176,1);
+
+	.cow-icon {
+		background: url($cow-icon) no-repeat center;
+		width: 100%;
+		height: $main-top-margin;
+	}
+
+	.action-button-container {
+		.action-button {
+			@include transition(all, 0.1s, ease-out, 0.1s);
+
+			margin: 8px 0px;
+			border-bottom: 50px solid $tertiary-light-color;
+			border-right: 50px solid transparent;
+			height: 0;
+			width: 100px;
+			cursor: pointer;
+
+			span {
+				text-align: center;
+				vertical-align: middle;
+				padding-left: 18px;
+				line-height: 50px;
+				font-size: 16px;
+			}
+
+			&:hover, &.active {
+				width: 150px;
+				border-bottom-color: $secondary-light-color;
+			}
+		}
+	}
+}
