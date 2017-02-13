@@ -13,7 +13,7 @@ class MainController extends Controller
 
     public function getAllRawSamples() 
     {
-		$maxSamples = 15;
+		$maxSamples = 10;
         return app('db')->select("SELECT * FROM sample ORDER BY timestamp ASC LIMIT {$maxSamples}");
     }
 
