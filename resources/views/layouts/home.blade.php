@@ -4,27 +4,18 @@
 
 	{{--css--}}
 	<link rel='stylesheet' href='style.css'/>
+	<link rel='stylesheet' href='skeleton.css'/>
 
 	{{-- js --}}
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script src="js/app.js"></script>
 </head>
 
-<style>
-	table {
-		border-collapse: collapse;
-	}
-	th, td {
-		padding: 4px;
-	}
-	table, th, td {
-		border: 1px solid black;
-	}
-</style>
-
 <body ng-app="app" ng-controller="MainController">
+	@include('nav/sidebar')
+
 <h1 ng-model="title"><% title %></h1>
-	<table>
+	<table class="u-full-width">
 		<thead>
 			<tr>
 				<th>ID</th>
