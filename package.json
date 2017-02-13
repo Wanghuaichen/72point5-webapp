@@ -24,6 +24,10 @@
   "homepage": "https://github.com/addisonbgross/72point5-webapp#readme",
   "dependencies": {
     "casperjs": "^1.1.3",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
     "phantomjs": "^2.1.7"
   }
 }

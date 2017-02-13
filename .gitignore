@@ -6,3 +6,8 @@ Homestead.yaml
 .tags
 tags
 /node_modules
+
+bootstrap/storage
+
+.sass-cache
+*.map

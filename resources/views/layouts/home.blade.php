@@ -2,6 +2,9 @@
 <head>
 	<title>72 Point 5</title>
 
+	{{--css--}}
+	<link rel='stylesheet' href='style.css'/>
+
 	{{-- js --}}
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script src="js/app.js"></script>
