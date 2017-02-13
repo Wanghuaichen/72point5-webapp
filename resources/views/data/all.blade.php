@@ -1,4 +1,4 @@
-<div class="all-cow-data container">
+<div class="all-cow-data">
 	<h1 ng-model="title"><% title %></h1>
 	<table class="u-full-width">
 		<thead>

@@ -8,5 +8,6 @@ table {
 
 .all-cow-data {
 	margin-top: $main-top-margin;
-	overflow-y: scroll;
+	height: calc(100vh - #{$main-top-margin});
+	overflow-y: auto;
 }

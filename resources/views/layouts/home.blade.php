@@ -18,9 +18,7 @@
 		</div>
 
 		<div class="nine columns">
-			<div class="main-container">
-				@include('data/all')
-			</div>
+			@include('data/all')
 		</div>
 	</div>
 </body>
