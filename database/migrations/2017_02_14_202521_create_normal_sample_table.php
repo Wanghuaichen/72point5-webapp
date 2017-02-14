@@ -19,6 +19,7 @@ class CreateNormalSampleTable extends Migration
 			$table->float('body_temp', 4, 2);
 			$table->float('ext_temp', 4, 2);
 			$table->integer('heart_rate')->unsigned();
+			$table->integer('error')->unsigned();
 			$table->integer('cow_id')->unsigned();
 			$table->foreign('cow_id')->references('id')->on('cow');
 		});
@@ -29,6 +30,7 @@ class CreateNormalSampleTable extends Migration
 			$table->float('x', 4, 2);
 			$table->float('y', 4, 2);
 			$table->float('z', 4, 2);
+			$table->integer('error')->unsigned();
 			$table->integer('cow_id')->unsigned();
 			$table->foreign('cow_id')->references('id')->on('cow');
 		});
