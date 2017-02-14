@@ -10,7 +10,8 @@
 $app->get('/', 'MainController@viewHome');
 
 /* api */
-$app->post('/getAllRaw', 'MainController@getAllRawSamples');
+$app->post('/getNormalSamples', 'MainController@getNormalSamples');
+$app->post('/getAccelSamples', 'MainController@getAccelSamples');
 $app->post('/newRaw', 'MainController@newRawSample');
 
 

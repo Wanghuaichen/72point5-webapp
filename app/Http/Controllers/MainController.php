@@ -11,10 +11,16 @@ class MainController extends Controller
 		return view('layouts/home');
 	}
 
-    public function getAllRawSamples() 
+    public function getNormalSamples() 
     {
 		$maxSamples = 10;
         return app('db')->select("SELECT * FROM normal_sample ORDER BY timestamp ASC LIMIT {$maxSamples}");
+    }
+
+    public function getAccelSamples() 
+    {
+		$maxSamples = 10;
+        return app('db')->select("SELECT * FROM accel_sample ORDER BY timestamp ASC LIMIT {$maxSamples}");
     }
 
 	public function newRawSample(Request $request)
@@ -30,8 +36,8 @@ class MainController extends Controller
 				'body_temp'  => $data['body_temp'],
 				'ext_temp'   => $data['ext_temp'],
 				'heart_rate' => $data['heart_rate'],
-				'cow_id'	 => $data['cow_id'],
-				'error'		 => $data['error']
+				'error'		 => $data['error'],
+				'cow_id'	 => $data['cow_id']
 			]	
 		]);
 	}

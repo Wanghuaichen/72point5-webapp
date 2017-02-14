@@ -5,6 +5,7 @@
 	-webkit-box-shadow: 3px 0px 3px 0px rgba(176,176,176,1);
 	-moz-box-shadow: 3px 0px 3px 0px rgba(176,176,176,1);
 	box-shadow: 3px 0px 3px 0px rgba(176,176,176,1);
+	position: fixed;
 
 	.cow-icon {
 		background: url($cow-icon) no-repeat center;
@@ -20,7 +21,7 @@
 			border-bottom: 50px solid $tertiary-light-color;
 			border-right: 50px solid transparent;
 			height: 0;
-			width: 100px;
+			width: $sidebar-width;
 			cursor: pointer;
 
 			span {

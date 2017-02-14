@@ -12,15 +12,8 @@
 </head>
 
 <body ng-app="app" ng-controller="MainController">
-	<div class="row">
-		<div class="two columns">
-			@include('nav/sidebar')
-		</div>
-
-		<div class="nine columns">
-			@include('data/all')
-		</div>
-	</div>
+	@include('nav/sidebar')
+	@include('data/all')
 </body>
 
 </html>

@@ -16,12 +16,21 @@ app.controller("MainController", ['$scope', '$http', function($scope, $http) {
 
 	// retrieve all unrefined, raw samples from db
 	$scope.getAllRawSamples = function getAllSamples() {
-		$http.post('/getAllRaw').then(
+		$http.post('/getNormalSamples').then(
 			function success(response) {
 				$scope.normal_samples = response.data;
 			},
 			function error(response) {
 				console.log("Error getting normal samples");
+			}
+		);
+
+		$http.post('/getAccelSamples').then(
+			function success(response) {
+				$scope.accel_samples = response.data;
+			},
+			function error(response) {
+				console.log("Error getting acceleration samples");
 			}
 		);
 	};
