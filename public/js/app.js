@@ -12,16 +12,16 @@ app.config(function($interpolateProvider) {
 
 app.controller("MainController", ['$scope', '$http', function($scope, $http) {
 	$scope.title = "All Cows";
-	$scope.samples = [];
+	$scope.normal_samples = [];
 
 	// retrieve all unrefined, raw samples from db
 	$scope.getAllRawSamples = function getAllSamples() {
 		$http.post('/getAllRaw').then(
 			function success(response) {
-				$scope.samples = response.data;
+				$scope.normal_samples = response.data;
 			},
 			function error(response) {
-				console.log("Error getting samples");
+				console.log("Error getting normal samples");
 			}
 		);
 	};
