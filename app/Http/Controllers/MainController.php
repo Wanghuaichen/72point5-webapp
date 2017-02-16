@@ -26,7 +26,7 @@ class MainController extends Controller
 	public function newRawSample(Request $request)
 	{
 		$NORMAL_SAMPLE_TYPE = 3;
-		$ACCEL_SAMPLE_TYPE = 4;
+		$ACCEL_SAMPLE_TYPE = 2;
 
 		$data = $request->input();
 		foreach ($data as $key => $value) {
