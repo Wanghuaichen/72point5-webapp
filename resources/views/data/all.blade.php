@@ -6,7 +6,7 @@
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Timestamp</th>
+				<th>Timestamp Received</th>
 				<th>Body Temp</th>
 				<th>External Temp</th>
 				<th>Heart Rate</th>
@@ -30,7 +30,7 @@
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Timestamp</th>
+				<th>Timestamp Received</th>
 				<th>X
 				<th>Y</th>
 				<th>Z</th>
