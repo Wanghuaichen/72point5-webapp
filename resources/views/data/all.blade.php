@@ -9,7 +9,7 @@
 				<th>Timestamp Received</th>
 				<th>Body Temp</th>
 				<th>External Temp</th>
-				<th>Heart Rate</th>
+				<th>Infrared Heart Rate Monitor (Raw Value)</th>
 				<th>Cow ID</th>
 				<th>Error Code</th>
 			</tr>
