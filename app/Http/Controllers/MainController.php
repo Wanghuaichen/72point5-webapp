@@ -34,25 +34,26 @@ class MainController extends Controller
 		}
 
 		if ($data['packetType'] == $NORMAL_SAMPLE_TYPE) {
-			var_dump(hexdec($data['objtemp_h']) << 8 | hexdec($data['objtemp_l']));
 			app('db')->table('normal_sample')->insert([
 				[
 					'timestamp'  => time(), //$data['timestamp'],
-					'body_temp'  => hexdec($data['objtemp_h'] << 8) | hexdec($data['objtemp_l']),
-					'ext_temp'   => hexdec($data['ambtemp_h'] << 8) | hexdec($data['ambtemp_l']),
-					'heart_rate' => hexdec($data['hrate_high'] << 8) | hexdec($data['hrate_low']),
+					'body_temp'  => hexdec(($data['objtemp_h'] << 8) | $data['objtemp_l']),
+					'ext_temp'   => hexdec(($data['ambtemp_h'] << 8) | $data['ambtemp_l']),
+					'heart_rate' => hexdec(($data['hrate_high'] << 8) | $data['hrate_low']),
 					'error'		 => $data['errcode'],
 					'cow_id'	 => $data['cowID']
 				]	
 			]);
 
 		} else if ($data['packetType'] == $ACCEL_SAMPLE_TYPE) {
+			$total = sqrt(pow($data['xaxis'], 2) + pow($data['yaxis'], 2) + pow($data['zaxis'], 2));
+
 			app('db')->table('accel_sample')->insert([
 				[
 					'timestamp'  => time(), //$data['timestamp'],
-					'x'			 => $data['xaxis'],
-					'y'			 => $data['yaxis'],
-					'z'			 => $data['zaxis'],
+					'x'			 => $data['xaxis'] / $total,
+					'y'			 => $data['yaxis'] / $total,
+					'z'			 => $data['zaxis'] / $total,
 					'error'		 => $data['errcode'],
 					'cow_id'	 => $data['cowID']
 				]	
