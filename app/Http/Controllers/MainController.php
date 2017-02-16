@@ -46,7 +46,7 @@ class MainController extends Controller
 			]);
 
 		} else if ($data['packetType'] == $ACCEL_SAMPLE_TYPE) {
-			app('db')->table('normal_sample')->insert([
+			app('db')->table('accel_sample')->insert([
 				[
 					'timestamp'  => $data['timestamp'],
 					'x'			 => $data['xaxis'],
