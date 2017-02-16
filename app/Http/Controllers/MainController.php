@@ -32,6 +32,7 @@ class MainController extends Controller
 		foreach ($data as $key => $value) {
 			/*** IN HERE WE CAN DO VALIDATION OF INPUTS ***/
 		}
+		var_dump($data['packetType']);
 
 		if ($data['packetType'] == $NORMAL_SAMPLE_TYPE) {
 			app('db')->table('normal_sample')->insert([
