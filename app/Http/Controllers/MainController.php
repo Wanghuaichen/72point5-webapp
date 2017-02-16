@@ -37,7 +37,7 @@ class MainController extends Controller
 			var_dump(hexdec($data['objtemp_h']) << 8 | hexdec($data['objtemp_l']));
 			app('db')->table('normal_sample')->insert([
 				[
-					'timestamp'  => $data['timestamp'],
+					'timestamp'  => time(), //$data['timestamp'],
 					'body_temp'  => hexdec($data['objtemp_h'] << 8) | hexdec($data['objtemp_l']),
 					'ext_temp'   => hexdec($data['ambtemp_h'] << 8) | hexdec($data['ambtemp_l']),
 					'heart_rate' => hexdec($data['hrate_high'] << 8) | hexdec($data['hrate_low']),
@@ -49,7 +49,7 @@ class MainController extends Controller
 		} else if ($data['packetType'] == $ACCEL_SAMPLE_TYPE) {
 			app('db')->table('accel_sample')->insert([
 				[
-					'timestamp'  => $data['timestamp'],
+					'timestamp'  => time(), //$data['timestamp'],
 					'x'			 => $data['xaxis'],
 					'y'			 => $data['yaxis'],
 					'z'			 => $data['zaxis'],
