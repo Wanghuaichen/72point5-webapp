@@ -26,7 +26,7 @@ class MainController extends Controller
 	public function newRawSample(Request $request)
 	{
 		$NORMAL_SAMPLE_TYPE = 3;
-		$ACCEL_SAMPLE_TYPE = 2;
+		$ACCEL_SAMPLE_TYPE = 4;
 
 		$data = $request->input();
 		foreach ($data as $key => $value) {
@@ -34,12 +34,13 @@ class MainController extends Controller
 		}
 
 		if ($data['packetType'] == $NORMAL_SAMPLE_TYPE) {
+			var_dump(hexdec($data['objtemp_h']) << 8 | hexdec($data['objtemp_l']));
 			app('db')->table('normal_sample')->insert([
 				[
 					'timestamp'  => $data['timestamp'],
-					'body_temp'  => (($data['objtemp_h'] & 0xff) << 8) | ($data['objtemp_l'] & 0xff),
-					'ext_temp'   => (($data['ambtemp_h'] & 0xff) << 8) | ($data['ambtemp_l'] & 0xff),
-					'heart_rate' => (($data['hrate_high'] & 0xff) << 8) | ($data['hrate_low'] & 0xff),
+					'body_temp'  => hexdec($data['objtemp_h'] << 8) | hexdec($data['objtemp_l']),
+					'ext_temp'   => hexdec($data['ambtemp_h'] << 8) | hexdec($data['ambtemp_l']),
+					'heart_rate' => hexdec($data['hrate_high'] << 8) | hexdec($data['hrate_low']),
 					'error'		 => $data['errcode'],
 					'cow_id'	 => $data['cowID']
 				]	
