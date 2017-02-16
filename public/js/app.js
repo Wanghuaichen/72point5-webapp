@@ -39,7 +39,7 @@ app.controller("MainController", ['$scope', '$http', function($scope, $http) {
 	$scope.getAllRawSamples();
 	window.setInterval(function() {
 		$scope.getAllRawSamples();
-	}, 3000);
+	}, 1000);
 }]);
 
 app.controller("NavController", ['$scope', function($scope) {

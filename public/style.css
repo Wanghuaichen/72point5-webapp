@@ -47,6 +47,7 @@ table {
     table tr th {
       text-align: center; }
     table tr td {
+      width: 50px;
       padding: 2px 4px;
       text-align: center; }
 
