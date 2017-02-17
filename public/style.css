@@ -1,7 +1,7 @@
 .sidebar {
   height: 100%;
   width: 90px;
-  background-color: #0092B2;
+  background-color: #0092b2;
   -webkit-box-shadow: 3px 0px 3px 0px #b0b0b0;
   -moz-box-shadow: 3px 0px 3px 0px #b0b0b0;
   box-shadow: 3px 0px 3px 0px #b0b0b0;
@@ -16,7 +16,7 @@
     -webkit-transition: all, 0.1s, ease-out, 0.1s;
     transition: all, 0.1s, ease-out, 0.1s;
     margin: 8px 0px;
-    border-bottom: 50px solid #FFFF7F;
+    border-bottom: 50px solid #ffff7f;
     border-right: 50px solid transparent;
     height: 0;
     width: 100px;
@@ -29,14 +29,17 @@
       font-size: 16px; }
     .sidebar .action-button-container .action-button:hover, .sidebar .action-button-container .action-button.active {
       width: 150px;
-      border-bottom-color: #96DD98; }
+      border-bottom-color: #96dd98; }
 
 table {
-  background-color: #96DD98;
+  background-color: #fff;
   padding: 10px;
   border-radius: 3px;
   font-size: 14px;
-  border-spacing: 4px !important; }
+  border-spacing: 4px !important;
+  -webkit-box-shadow: 2px 2px 5px 1px #999999;
+  -moz-box-shadow: 2px 2px 5px 1px #999999;
+  box-shadow: 2px 2px 5px 1px #999999; }
   table caption {
     font-size: 16px;
     text-align: left;
@@ -52,13 +55,14 @@ table {
       text-align: center; }
 
 .all-cow-data {
-  padding-top: 64px;
+  /*padding-top: $main-top-margin;*/
+  padding: 6% 4%;
   margin-left: 200px;
   height: calc(100vh - 64px);
-  width: 80%; }
+  max-width: 80%; }
 
 body {
   margin: 0;
-  background-color: #FFFFFF; }
+  background-color: #efefef; }
 
 /*# sourceMappingURL=style.css.map */

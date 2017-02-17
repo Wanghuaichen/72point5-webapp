@@ -1,9 +1,13 @@
 table {
-	background-color: $secondary-light-color;
+	background-color: $table-background;
 	padding: 10px;
 	border-radius: 3px;
 	font-size: 14px;
 	border-spacing: 4px !important;
+
+	-webkit-box-shadow: 2px 2px 5px 1px rgba(153,153,153,1);
+	-moz-box-shadow: 2px 2px 5px 1px rgba(153,153,153,1);
+	box-shadow: 2px 2px 5px 1px rgba(153,153,153,1);
 
 	caption {
 		font-size: 16px;
@@ -28,8 +32,9 @@ table {
 }
 
 .all-cow-data {
-	padding-top: $main-top-margin;
+	/*padding-top: $main-top-margin;*/
+	padding: 6% 4%;
 	margin-left: 2 * $sidebar-width;
 	height: calc(100vh - #{$main-top-margin});
-	width: 80%;
+	max-width: 80%;
 }
