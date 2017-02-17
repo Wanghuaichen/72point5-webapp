@@ -20,6 +20,10 @@
 		height: $topbar-height;
 		background-color: red;
 	}
+
+	@media (min-width: $responsive-break) {
+		display: none;
+	}
 }
 
 .sidebar {

@@ -15,6 +15,9 @@
     width: 10%;
     height: 50px;
     background-color: red; }
+  @media (min-width: 900px) {
+    .topbar {
+      display: none; } }
 
 .sidebar {
   height: 100%;
