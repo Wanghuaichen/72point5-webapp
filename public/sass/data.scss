@@ -37,4 +37,9 @@ table {
 	margin-left: 2 * $sidebar-width;
 	height: calc(100vh - #{$main-top-margin});
 	max-width: 80%;
+
+	@media (max-width: $responsive-break) {
+		margin: 0 auto;
+		padding: 4%;
+	}
 }

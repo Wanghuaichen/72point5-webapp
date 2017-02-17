@@ -12,6 +12,7 @@
 </head>
 
 <body ng-app="app" ng-controller="MainController">
+	@include('nav/topbar')
 	@include('nav/sidebar')
 	@include('data/all')
 </body>
