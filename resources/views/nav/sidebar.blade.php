@@ -16,8 +16,5 @@
 		</div>
 	</div>
 
-	<button ng-click="downloadCsv()" class="download-button"></button>
-	<div class="download-button-result">
-		<p>Your download is complete!</p>
-	</div>
+	<a target="_self" href="cowSamples.csv" class="download-button" download="cowSamples.csv"></a>
 </div>

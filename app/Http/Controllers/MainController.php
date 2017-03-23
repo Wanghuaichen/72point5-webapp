@@ -12,7 +12,7 @@ class MainController extends Controller
 		return view('layouts/home');
 	}
 
-	public function downloadAsCSV()
+	public function createCSV()
 	{
 		$normal_samples = app('db')->select("SELECT * FROM normal_sample ORDER BY timestamp DESC");
 		$accel_samples = app('db')->select("SELECT * FROM accel_sample ORDER BY timestamp DESC");
@@ -38,12 +38,6 @@ class MainController extends Controller
 		}
 
 		fclose($file);
-
-		$file_headers = array(
-			'Content-Type' => 'text/csv',
-		);
-
-		return response()->download(getcwd() . "/" . $filename, $filename, $file_headers);
 	}
 
     public function getNormalSamples() 
