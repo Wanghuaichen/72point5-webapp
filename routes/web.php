@@ -13,5 +13,4 @@ $app->get('/', 'MainController@viewHome');
 $app->post('/getNormalSamples', 'MainController@getNormalSamples');
 $app->post('/getAccelSamples', 'MainController@getAccelSamples');
 $app->post('/newRaw', 'MainController@newRawSample');
-
-
+$app->post('/downloadAsCSV', 'MainController@downloadAsCSV');

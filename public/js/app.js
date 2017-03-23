@@ -42,8 +42,7 @@ app.controller("MainController", ['$scope', '$http', function($scope, $http) {
 	}, 1000);
 }]);
 
-app.controller("NavController", ['$scope', function($scope) {
-
+app.controller("NavController", ['$scope', '$http', function($scope, $http) {
 	$scope.navTo = function(location) {
 		var buttons = document.getElementsByClassName('action-button');
 		[].forEach.call(buttons, function(button) {
@@ -53,5 +52,17 @@ app.controller("NavController", ['$scope', function($scope) {
 				button.classList.remove("active");
 			}
 		});
+	}
+
+	$scope.downloadCsv = function() {
+		$http.post('/downloadAsCSV').then(
+			function success(response) {
+				document.getElementsByClassName('download-button-result')[0].classList.add('show');
+				console.log("GOT IT");
+			},
+			function error(response) {
+				console.log("Error download samples as CSV");
+			}
+		);
 	}
 }]);

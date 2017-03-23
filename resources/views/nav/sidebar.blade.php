@@ -15,4 +15,9 @@
 			<span>About</span>
 		</div>
 	</div>
+
+	<button ng-click="downloadCsv()" class="download-button"></button>
+	<div class="download-button-result">
+		<p>Your download is complete!</p>
+	</div>
 </div>

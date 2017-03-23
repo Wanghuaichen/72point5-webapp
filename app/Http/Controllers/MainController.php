@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -9,6 +10,45 @@ class MainController extends Controller
 	public function viewHome()
 	{
 		return view('layouts/home');
+	}
+
+	public function downloadAsCSV()
+	{
+		$normal_samples = app('db')->select("SELECT * FROM normal_sample ORDER BY timestamp DESC");
+		$accel_samples = app('db')->select("SELECT * FROM accel_sample ORDER BY timestamp DESC");
+		$filename = "cowSamples.csv";
+		$file = fopen($filename, "w");
+		$normal_header = array_keys((array)$normal_samples[0]);
+		$accel_header = array_keys((array)$accel_samples[0]);
+
+		// write normal samples
+		fputcsv($file, ["Normal Samples"]);
+		fputcsv($file, $normal_header);
+		foreach ($normal_samples as $sample) {
+			fputcsv($file, (array)$sample);
+		}
+
+		fputcsv($file, [""]);
+
+		// write acceleometer samples
+		fputcsv($file, ["Acceleration Samples"]);
+		fputcsv($file, $accel_header);
+		foreach ($accel_samples as $sample) {
+			fputcsv($file, (array)$sample);
+		}
+
+		fclose($file);
+
+		// deliver file
+		header('Content-Description: File Transfer');
+		header('Content-Type: application/octet-stream');
+		header('Content-Disposition: attachment; filename="'.basename($filename).'"');
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate');
+		header('Pragma: public');
+		header('Content-Length: ' . filesize($filename));
+		readfile($filename);
+		exit;
 	}
 
     public function getNormalSamples() 
