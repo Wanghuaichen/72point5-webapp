@@ -88,5 +88,7 @@ class MainController extends Controller
 				]	
 			]);
 		}
+
+		$this->createCSV();
 	}
 }

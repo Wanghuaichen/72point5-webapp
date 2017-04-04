@@ -1,4 +1,4 @@
-<div class="all-cow-data">
+<div class="all-cow-data show">
 	<h1 ng-model="title"><% title %></h1>
 
 	<table class="u-full-width">

@@ -12,9 +12,13 @@
 </head>
 
 <body ng-app="app" ng-controller="MainController">
+	{{-- navigation --}}
 	@include('nav/topbar')
 	@include('nav/sidebar')
+
+	{{-- tab accessed sections --}}
 	@include('data/all')
+	@include('data/about')
 </body>
 
 </html>

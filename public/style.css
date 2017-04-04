@@ -94,16 +94,26 @@ table {
       padding: 2px 4px;
       text-align: center; }
 
-.all-cow-data {
-  /*padding-top: $main-top-margin;*/
+.data-section, .all-cow-data, .single-cow-data, .about-data {
+  -moz-transition: opacity 0.35s ease-out;
+  -o-transition: opacity 0.35s ease-out;
+  -webkit-transition: opacity 0.35s ease-out;
+  transition: opacity 0.35s ease-out;
   padding: 6% 4%;
   margin-left: 200px;
-  height: calc(100vh - 64px);
-  max-width: 80%; }
+  height: auto;
+  max-width: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; }
+  .data-section.show, .show.all-cow-data, .show.single-cow-data, .show.about-data {
+    opacity: 1.0; }
   @media (max-width: 1000px) {
-    .all-cow-data {
+    .data-section, .all-cow-data, .single-cow-data, .about-data {
       margin: 0 auto;
-      padding: 4%; } }
+      padding: 4%;
+      top: 64px; } }
 
 body {
   margin: 0;

@@ -31,15 +31,37 @@ table {
 	}
 }
 
-.all-cow-data {
-	/*padding-top: $main-top-margin;*/
+.data-section {
+	@include transition(opacity 0.35s ease-out);
 	padding: 6% 4%;
 	margin-left: 2 * $sidebar-width;
-	height: calc(100vh - #{$main-top-margin});
+	height: auto;
 	max-width: 80%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+
+	&.show {
+		opacity: 1.0;
+	}
 
 	@media (max-width: $responsive-break) {
 		margin: 0 auto;
 		padding: 4%;
+		top: #{$main-top-margin};
 	}
 }
+
+.all-cow-data {
+	@extend .data-section;
+}
+
+.single-cow-data {
+	@extend .data-section;
+}
+
+.about-data {
+	@extend .data-section;
+}
+

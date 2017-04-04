@@ -8,9 +8,6 @@
 		<div ng-click="navTo('Single Cow')" class="action-button">
 			<span>Single Cow</span>
 		</div>
-		<div ng-click="navTo('Graphs')" class="action-button">
-			<span>Graphs</span>
-		</div>
 		<div ng-click="navTo('About')" class="action-button">
 			<span>About</span>
 		</div>

@@ -39,12 +39,7 @@ app.controller("MainController", ['$scope', '$http', function($scope, $http) {
 	$scope.getAllRawSamples();
 	window.setInterval(function() {
 		$scope.getAllRawSamples();
-	}, 1000);
-
-	// create csv file for export
-	window.setInterval(function() {
-		$http.post('/createCSV');
-	}, 5000);
+	}, 1500);
 }]);
 
 app.controller("NavController", ['$scope', '$http', function($scope, $http) {
@@ -53,9 +48,21 @@ app.controller("NavController", ['$scope', '$http', function($scope, $http) {
 		[].forEach.call(buttons, function(button) {
 			if (location == button.innerText) {
 				button.classList.add("active");	
+				$scope.changeLocation(button.innerText);
 			} else {
 				button.classList.remove("active");
 			}
 		});
+	}
+
+	$scope.changeLocation = function(location) {
+		if (location == "About") {
+			document.getElementsByClassName("about-data")[0].classList.add("show");
+			document.getElementsByClassName("all-cow-data")[0].classList.remove("show");
+			
+		} else if (location == "All Cows") {
+			document.getElementsByClassName("all-cow-data")[0].classList.add("show");
+			document.getElementsByClassName("about-data")[0].classList.remove("show");
+		}
 	}
 }]);
