@@ -37,8 +37,7 @@ app.controller("MainController", ['$scope', '$rootScope', '$http', function($sco
 	$scope.getCowIds = function getCowIds() {
 		$http.post('/getNumCows').then(
 			function success(response) {
-				console.log(response.data);
-				$scope.cowIds = new Array(response.data);
+				$scope.cowIds = response.data;
 			},
 			function error(response) {
 				console.log("Error getting num cows");
