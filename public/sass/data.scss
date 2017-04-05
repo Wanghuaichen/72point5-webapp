@@ -65,7 +65,7 @@ table {
 	padding: 6% 4%;
 	margin-left: 2 * $sidebar-width;
 	height: auto;
-	max-width: 80%;
+	width: 70%;
 	position: absolute;
 	top: 0;
 	left: 100vw;
@@ -80,9 +80,9 @@ table {
 	}
 
 	@media (max-width: $responsive-break) {
+		width: 92%;
 		margin: 0 auto;
-		padding: 4%;
-		top: #{$main-top-margin};
+		padding-top: 8%;
 	}
 }
 

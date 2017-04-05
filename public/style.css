@@ -126,7 +126,7 @@ table {
   padding: 6% 4%;
   margin-left: 200px;
   height: auto;
-  max-width: 80%;
+  width: 70%;
   position: absolute;
   top: 0;
   left: 100vw;
@@ -139,9 +139,9 @@ table {
     display: block; }
   @media (max-width: 1000px) {
     .data-section, .all-cow-data, .single-cow-data, .about-data {
+      width: 92%;
       margin: 0 auto;
-      padding: 4%;
-      top: 64px; } }
+      padding-top: 8%; } }
 
 body {
   margin: 0;
