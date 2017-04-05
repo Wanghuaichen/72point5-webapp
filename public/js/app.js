@@ -34,10 +34,11 @@ app.controller("MainController", ['$scope', '$rootScope', '$http', function($sco
 		);
 	};
 
-	$scope.getNumCows = function getNumCows() {
+	$scope.getCowIds = function getCowIds() {
 		$http.post('/getNumCows').then(
 			function success(response) {
-				$scope.numCows = new Array(response.data);
+				console.log(response.data);
+				$scope.cowIds = new Array(response.data);
 			},
 			function error(response) {
 				console.log("Error getting num cows");
@@ -58,7 +59,7 @@ app.controller("MainController", ['$scope', '$rootScope', '$http', function($sco
 				console.log("Error getting single sanples: " + cow_id);
 			}
 		);
-		$scope.getNumCows();
+		$scope.getCowIds();
 	};
 
 	// get all samples and set loop on database

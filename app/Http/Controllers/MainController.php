@@ -41,7 +41,7 @@ class MainController extends Controller
 	}
 
 	public function getNumCows() {
-		return count(app('db')->select("SELECT * FROM cow"));
+		return count(app('db')->select("SELECT id FROM cow"));
 	}
 
     public function getNormalSamples() 

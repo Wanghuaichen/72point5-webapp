@@ -1,6 +1,6 @@
 <div class="single-cow-data">
 	<h1>Single Cows</h1>
-	<div class="single-cow-list" ng-repeat="i in numCows">
+	<div class="single-cow-list" ng-repeat="i in cowIds">
 		<p ng-click="getSingleSamples(i)" class="single-cow-button"><% i %></p>
 	</div>
 
