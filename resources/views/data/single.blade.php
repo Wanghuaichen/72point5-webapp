@@ -1,7 +1,9 @@
 <div class="single-cow-data">
 	<h1>Single Cows</h1>
-	<div class="single-cow-list" ng-repeat="cow in cowIds">
-		<p ng-click="getSingleSamples(cow.id)" class="single-cow-button"><% cow.id %></p>
+	<div class="single-cow-list">
+		<p ng-click="getSingleSamples(cow.id)" ng-repeat="cow in cowIds" class="single-cow-button">
+			<% cow.id %>
+		</p>
 	</div>
 
 	<h4>Cow #<% single_samples.normal[0].cow_id %></h4>
