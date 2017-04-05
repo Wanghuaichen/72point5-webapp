@@ -31,19 +31,49 @@ table {
 	}
 }
 
+.single-cow-list {
+	display: block;
+	height: 34px;
+	width: 100%;
+	margin-bottom: 16px;
+
+	.single-cow-button {
+		@include transition(all 0.1s ease-out);
+		display: inline-block;
+		background-color: $tertiary-light-color;
+		font-size: 22px;
+		text-align: center;
+		height: auto;
+		width: 24px;
+		margin: 0 6px;
+		cursor: pointer;
+
+		-webkit-box-shadow: 0px 0px 3px 0px rgba(176,176,176,1);
+		-moz-box-shadow: 0px 0px 3px 0px rgba(176,176,176,1);
+		box-shadow: 0px 0px 3px 0px rgba(176,176,176,1);
+
+		&:hover {
+			background-color: $secondary-light-color;
+		}
+	}
+}
+
+
+
 .data-section {
-	@include transition(opacity 0.35s ease-out);
+	@include transition(all 0.1s ease-out);
 	padding: 6% 4%;
 	margin-left: 2 * $sidebar-width;
 	height: auto;
 	max-width: 80%;
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: 100vw;
 	opacity: 0;
 
 	&.show {
 		opacity: 1.0;
+		left: 0;
 	}
 
 	@media (max-width: $responsive-break) {

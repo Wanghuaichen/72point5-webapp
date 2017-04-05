@@ -18,6 +18,7 @@
 
 	{{-- tab accessed sections --}}
 	@include('data/all')
+	@include('data/single')
 	@include('data/about')
 </body>
 

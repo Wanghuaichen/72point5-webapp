@@ -94,21 +94,46 @@ table {
       padding: 2px 4px;
       text-align: center; }
 
+.single-cow-list {
+  display: block;
+  height: 34px;
+  width: 100%;
+  margin-bottom: 16px; }
+  .single-cow-list .single-cow-button {
+    -moz-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    -webkit-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+    display: inline-block;
+    background-color: #ffff7f;
+    font-size: 22px;
+    text-align: center;
+    height: auto;
+    width: 24px;
+    margin: 0 6px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 3px 0px #b0b0b0;
+    -moz-box-shadow: 0px 0px 3px 0px #b0b0b0;
+    box-shadow: 0px 0px 3px 0px #b0b0b0; }
+    .single-cow-list .single-cow-button:hover {
+      background-color: #96dd98; }
+
 .data-section, .all-cow-data, .single-cow-data, .about-data {
-  -moz-transition: opacity 0.35s ease-out;
-  -o-transition: opacity 0.35s ease-out;
-  -webkit-transition: opacity 0.35s ease-out;
-  transition: opacity 0.35s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
   padding: 6% 4%;
   margin-left: 200px;
   height: auto;
   max-width: 80%;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 100vw;
   opacity: 0; }
   .data-section.show, .show.all-cow-data, .show.single-cow-data, .show.about-data {
-    opacity: 1.0; }
+    opacity: 1.0;
+    left: 0; }
   @media (max-width: 1000px) {
     .data-section, .all-cow-data, .single-cow-data, .about-data {
       margin: 0 auto;
@@ -117,6 +142,7 @@ table {
 
 body {
   margin: 0;
-  background-color: #efefef; }
+  background-color: #efefef;
+  overflow-x: hidden; }
 
 /*# sourceMappingURL=style.css.map */

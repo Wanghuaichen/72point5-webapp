@@ -40,17 +40,29 @@ class MainController extends Controller
 		fclose($file);
 	}
 
+	public function getNumCows() {
+		return count(app('db')->select("SELECT * FROM cow"));
+	}
+
     public function getNormalSamples() 
     {
 		$maxSamples = 10;
-        return app('db')->select("SELECT * FROM normal_sample ORDER BY timestamp DESC LIMIT {$maxSamples}");
+		return app('db')->select("SELECT * FROM normal_sample ORDER BY timestamp DESC LIMIT {$maxSamples}");
     }
 
     public function getAccelSamples() 
     {
 		$maxSamples = 10;
-        return app('db')->select("SELECT * FROM accel_sample ORDER BY timestamp DESC LIMIT {$maxSamples}");
-    }
+		return app('db')->select("SELECT * FROM accel_sample ORDER BY timestamp DESC LIMIT {$maxSamples}");
+	}
+
+	public function getSingleSamples(Request $req)
+	{
+		$cow_id = $req->json()->get('cowId');
+		$cow['normal'] = app('db')->select("SELECT * FROM normal_sample WHERE cow_id = {$cow_id} ORDER BY timestamp DESC");
+		$cow['accel'] = app('db')->select("SELECT * FROM accel_sample WHERE cow_id = {$cow_id} ORDER BY timestamp DESC");
+		return $cow;
+	}
 
 	public function newRawSample(Request $request)
 	{

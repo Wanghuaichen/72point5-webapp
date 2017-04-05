@@ -10,12 +10,11 @@ app.config(function($interpolateProvider) {
 	$interpolateProvider.endSymbol('%>');
 })
 
-app.controller("MainController", ['$scope', '$http', function($scope, $http) {
+app.controller("MainController", ['$scope', '$rootScope', '$http', function($scope, $rootScope, $http) {
 	$scope.title = "All Cows";
-	$scope.normal_samples = [];
 
 	// retrieve all unrefined, raw samples from db
-	$scope.getAllRawSamples = function getAllSamples() {
+	$scope.getNewestSamples = function getNewestSamples() {
 		$http.post('/getNormalSamples').then(
 			function success(response) {
 				$scope.normal_samples = response.data;
@@ -35,14 +34,41 @@ app.controller("MainController", ['$scope', '$http', function($scope, $http) {
 		);
 	};
 
+	$scope.getNumCows = function getNumCows() {
+		$http.post('/getNumCows').then(
+			function success(response) {
+				$scope.numCows = new Array(response.data);
+			},
+			function error(response) {
+				console.log("Error getting num cows");
+			}
+		);
+	};
+
+	$rootScope.getSingleSamples = function getSingleSamples(cow_id) {
+		$http({
+			url: '/getSingleSamples',
+			method: 'POST',
+			data: {'cowId': cow_id},
+		}).then(
+			function success(response) {
+				$scope.single_samples = response.data;
+			},
+			function error(response) {
+				console.log("Error getting single sanples: " + cow_id);
+			}
+		);
+		$scope.getNumCows();
+	};
+
 	// get all samples and set loop on database
-	$scope.getAllRawSamples();
+	$scope.getNewestSamples();
 	window.setInterval(function() {
-		$scope.getAllRawSamples();
+		$scope.getNewestSamples();
 	}, 1500);
 }]);
 
-app.controller("NavController", ['$scope', '$http', function($scope, $http) {
+app.controller("NavController", ['$scope', '$rootScope', '$http', function($scope, $rootScope, $http) {
 	$scope.navTo = function(location) {
 		var buttons = document.getElementsByClassName('action-button');
 		[].forEach.call(buttons, function(button) {
@@ -56,13 +82,22 @@ app.controller("NavController", ['$scope', '$http', function($scope, $http) {
 	}
 
 	$scope.changeLocation = function(location) {
-		if (location == "About") {
-			document.getElementsByClassName("about-data")[0].classList.add("show");
-			document.getElementsByClassName("all-cow-data")[0].classList.remove("show");
-			
-		} else if (location == "All Cows") {
+		if (location == "All Cows") {
 			document.getElementsByClassName("all-cow-data")[0].classList.add("show");
 			document.getElementsByClassName("about-data")[0].classList.remove("show");
-		}
+			document.getElementsByClassName("single-cow-data")[0].classList.remove("show");
+
+		} else if (location == "Single Cow") {
+			document.getElementsByClassName("single-cow-data")[0].classList.add("show");
+			document.getElementsByClassName("all-cow-data")[0].classList.remove("show");
+			document.getElementsByClassName("about-data")[0].classList.remove("show");
+			$rootScope.getSingleSamples(1);
+
+		} else if (location == "About") {
+			document.getElementsByClassName("about-data")[0].classList.add("show");
+			document.getElementsByClassName("all-cow-data")[0].classList.remove("show");
+			document.getElementsByClassName("single-cow-data")[0].classList.remove("show");
+		} 
+
 	}
 }]);
