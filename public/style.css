@@ -133,6 +133,7 @@ table {
   opacity: 0; }
   .data-section.show, .show.all-cow-data, .show.single-cow-data, .show.about-data {
     opacity: 1.0;
+    top: 0;
     left: 0; }
   @media (max-width: 1000px) {
     .data-section, .all-cow-data, .single-cow-data, .about-data {
