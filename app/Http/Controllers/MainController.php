@@ -78,9 +78,9 @@ class MainController extends Controller
 			app('db')->table('normal_sample')->insert([
 				[
 					'timestamp'  => time(), //$data['timestamp'],
-					'body_temp'  => hexdec(($data['objtemp_h'] << 8) | $data['objtemp_l']),
-					'ext_temp'   => hexdec(($data['ambtemp_h'] << 8) | $data['ambtemp_l']),
-					'heart_rate' => hexdec(($data['hrate_high'] << 8) | $data['hrate_low']),
+					'body_temp'  => $data['objtemp_l']),
+					'ext_temp'   => $data['ambtemp_l']),
+					'heart_rate' => $data['hrate_low']),
 					'error'		 => $data['errcode'],
 					'cow_id'	 => $data['cowID']
 				]	
