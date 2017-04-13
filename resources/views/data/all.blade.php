@@ -14,7 +14,7 @@
 				<th>Error Code</th>
 			</tr>
 		</thead>
-		<tr ng-repeat="sample in normal_samples">
+		<tr ng-repeat="sample in all_samples.normal">
 			<td><% sample.id %></td>
 			<td><% sample.timestamp * 1000 | date:'medium' %></td>
 			<td><% sample.body_temp %></td>
@@ -38,7 +38,7 @@
 				<th>Error Code</th>
 			</tr>
 		</thead>
-		<tr ng-repeat="sample in accel_samples">
+		<tr ng-repeat="sample in all_samples.accel">
 			<td><% sample.id %></td>
 			<td><% sample.timestamp * 1000 | date:'medium' %></td>
 			<td><% sample.x %></td>
