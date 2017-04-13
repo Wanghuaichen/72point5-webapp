@@ -6,7 +6,7 @@
 		</p>
 	</div>
 
-	<h4>Cow #<% single_samples.normal[0].cow_id %></h4>
+	<h4>Cow #<% single_samples.normal[0].cow_id || single_samples.accel[0].cow_id %></h4>
 
 	<table class="u-full-width">
 		<caption>Normal Samples</caption>
