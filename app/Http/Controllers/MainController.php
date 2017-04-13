@@ -52,8 +52,13 @@ class MainController extends Controller
 		fclose($file);
 	}
 
-	public function getNumCows() {
-		return app('db')->select("SELECT id FROM cow");
+	public function getCowIds() {
+		return app('db')->select("
+			SELECT DISTINCT cow.id 
+			FROM cow 
+			JOIN normal_sample
+			JOIN accel_sample ON cow.id=normal_sample.cow_id OR cow.id=accel_sample.cow_id
+		");
 	}
 
 	public function getLatestSamples()

@@ -26,7 +26,7 @@ app.controller("MainController", ['$scope', '$rootScope', '$http', function($sco
 
 	// get all cow id's for single cow list
 	$scope.getCowIds = function getCowIds() {
-		$http.post('/getNumCows').then(
+		$http.post('/getCowIds').then(
 			function success(response) {
 				$scope.cowIds = response.data;
 			},
